@@ -10,13 +10,20 @@ body {
 
 header {
   grid-area: H;
+
   position: fixed;
-  right: 0;
+  top: 0;
   left: 0;
+  right: 0;
 }
 aside {
   grid-area: A;
-  margin-top: 34px;
+
+  position: fixed;
+  top: 34px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
 }
 main {
   grid-area: M;
@@ -77,6 +84,7 @@ article > div.content {
 }
 article > div.content > h2 {
   color: darkcyan;
+  font-size: 4vw;
 }
 article > div.content > p {
 }
@@ -129,4 +137,23 @@ footer > p.bottom {
 }
 footer > p.bottom > a {
   color: white;
+}
+
+@media (max-width: 1000px) {
+  aside {
+    display: none;
+  }
+  body {
+    grid-template-areas:
+      'H'
+      'M'
+      'F';
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  article {
+    flex-direction: column;
+  }
 }
